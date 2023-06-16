@@ -17,5 +17,5 @@ def solution2(s):
         for element in elements :
             number = int(element)
             if number not in answer :
-                answer[number] = 1 # 딕셔너리 키 사용
+                answer[number] = 1 # 딕셔너리 키 사용 answer[키] = 값
     return list(answer) # 딕셔너리 값이 배정된 키만 배열로 리턴됨
