@@ -14,3 +14,16 @@ def solution(user_id, banned_id):
     banPatterns = [x.replace('*', '.') for x in banned_id]
     search(0,0,user_id,answer,banPatterns)
     return len(answer)
+
+from itertools import  permutations
+import re
+
+def solution2(user_id, banned_id):
+    banned = ' '.join(banned_id).replace('*', '.')
+    answer = set()
+
+    for i in permutations(user_id, len(banned_id)):
+        if re.fullmatch(banned, ' '.join(i)):
+            answer.add(''.join(sorted(i)))
+
+    return len(answer)
